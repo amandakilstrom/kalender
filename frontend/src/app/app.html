@@ -1,0 +1,16 @@
+<div style="max-width: 600px; margin: 40px auto; font-family: sans-serif;">
+  <h1>📅 Kalender</h1>
+
+  <h2>Skapa event</h2>
+  <input [(ngModel)]="newEvent.title" placeholder="Titel" /><br>
+  <input [(ngModel)]="newEvent.description" placeholder="Beskrivning" /><br>
+  <input [(ngModel)]="newEvent.startTime" type="datetime-local" /><br>
+  <input [(ngModel)]="newEvent.endTime" type="datetime-local" /><br>
+  <button (click)="createEvent()">Spara</button>
+
+  <h2>Events</h2>
+  <div *ngFor="let event of events">
+    <strong>{{ event.title }}</strong> — {{ event.startTime }}
+    <p>{{ event.description }}</p>
+  </div>
+</div>
